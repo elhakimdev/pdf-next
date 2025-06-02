@@ -1,9 +1,10 @@
 import { Button } from "~/components/ui/button"
 import { PDFDocument } from "~/lib/pdf-next/src/core/PDFDocument";
 import { PDFTextElement } from "~/lib/pdf-next/src/elements/PDFTextElement";
-import { PDFLibRenderer } from "~/lib/pdf-next/src/renderers/PDFLibRenderer";
 import { PageOrientation } from "~/lib/pdf-next/src/types/core/PDFPage";
 import { PDFDocument as PDFLibEngine } from "pdf-lib";
+import { PDFLibRenderer } from "~/lib/pdf-next/src/renderer/drivers/PDFLibRenderer";
+import { PDFEngineContext } from "~/lib/pdf-next/src/core/contexts/PDFEngineContext";
 
 export default defineNuxtComponent({
   setup(){
@@ -52,6 +53,14 @@ export default defineNuxtComponent({
           margin: 10,
         }
       );
+
+      doc.on("beforeAddElement", (ev) => {
+        console.log("Instance - beforeAddElement", {...ev});
+      })
+
+      doc.on("afterAddElement", (ev) => {
+        console.log("Instace - afterAddElement", {...ev});
+      })
 
       doc.addElement(text);
       doc.addElement(textA);

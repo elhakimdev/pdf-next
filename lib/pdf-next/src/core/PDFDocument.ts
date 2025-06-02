@@ -1,15 +1,22 @@
 import type { DocumentMetadata, PDFDocumentInterface } from "../types/core/PDFDocument";
 import { PageOrientation, type PDFPageInterface } from "../types/core/PDFPage";
 import type { PDFElementInterface, SpacingOptions } from "../types/elements/PDFElement";
+import { PDFEngineContext } from "./contexts/PDFEngineContext";
+import type { PDFDocumentLifecycleEvents } from "./lifecycle/events/PDFDocumentEvents";
+import { PDFLifecycleRegistry } from "./lifecycle/PDFLifecycleEventsRegistry";
+import { PDFLifecycleManager } from "./lifecycle/PDFLifecycleManager";
 import { PDFCursorManager } from "./PDFCursorManager";
 import { PDFPage } from "./PDFPage";
 
 export class PDFDocument implements PDFDocumentInterface {
-  pages: PDFPageInterface[] = [];
-  metadata?: DocumentMetadata | undefined;
-  pageCount: number = 0;
-  cursor: PDFCursorManager;
-  defaultOrientation: PageOrientation = PageOrientation.Portrait;
+  private lifecycle = new PDFLifecycleManager<PDFDocumentLifecycleEvents>();
+  public pages: PDFPageInterface[] = [];
+  public metadata?: DocumentMetadata | undefined;
+  public pageCount: number = 0;
+  public cursor: PDFCursorManager;
+  public defaultOrientation: PageOrientation = PageOrientation.Portrait;
+  public on = this.lifecycle.on.bind(this.lifecycle);
+  public emit = this.lifecycle.emit.bind(this.lifecycle);
 
   constructor(
     initialWidth = 595,  // e.g., A4 width pt
@@ -68,6 +75,15 @@ export class PDFDocument implements PDFDocumentInterface {
   }
 
   addElement(element: PDFElementInterface): void {
+    this.emit("beforeAddElement", {
+      document: this,
+      elementId: element.id
+    });
+    PDFEngineContext.LifecycleRegistries.Hooks.Document.emit("beforeAddElement", {
+      document: this,
+      elementId: element.id
+    });
+
     if (this.pages.length === 0) throw new Error("No pages in document");
 
     let currentPage = this.pages[this.pages.length - 1];
@@ -100,5 +116,16 @@ export class PDFDocument implements PDFDocumentInterface {
 
     currentPage.addElement(element);
     this.cursor.advanceBySize(size);
+
+    this.emit("afterAddElement",{
+      document: this,
+      elementId: element.id,
+      pageIndex: pageIndex
+    })
+    PDFEngineContext.LifecycleRegistries.Hooks.Document.emit("afterAddElement", {
+      document: this,
+      elementId: element.id,
+      pageIndex: pageIndex
+    });
   }
 }

@@ -1,9 +1,9 @@
-import { PDFDocument as PDFLibDocument, rgb } from "pdf-lib";
-import type { PDFDocumentInterface } from "../types/core/PDFDocument";
-import type { PDFPageInterface } from "../types/core/PDFPage";
-import type { PDFElementInterface } from "../types/elements/PDFElement";
-import { PDFTextElement } from "../elements/PDFTextElement";
-import { PDFRenderer } from "./PDFRenderer";
+import { rgb, PDFDocument as PDFLibDocument } from "pdf-lib";
+import type { PDFTextElement } from "../../elements/PDFTextElement";
+import type { PDFDocumentInterface } from "../../types/core/PDFDocument";
+import type { PDFPageInterface } from "../../types/core/PDFPage";
+import type { PDFElementInterface } from "../../types/elements/PDFElement";
+import { PDFRenderer } from "../PDFRenderer";
 
 export class PDFLibRenderer extends PDFRenderer {
   private pdfDoc: PDFLibDocument;
