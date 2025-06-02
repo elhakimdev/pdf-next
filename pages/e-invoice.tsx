@@ -37,20 +37,150 @@ export default defineNuxtComponent({
         "Hello, this is a long paragraph of text to render.",
         {
           width: 400,
-          fontSize: 14,
-          lineHeight: 1.5,
+          fontSize: 20,
+          lineHeight: 2.2,
           fontFamily: "Helvetica",
-          margin: 10,
+          margin: 15,
         }
       );
       const textA = new PDFTextElement(
         "Hello, this is a long paragraph of text to render. Loremafkdbkfbdskjfkjdsbkjfbdskf lsndfjdskjfkdj",
         {
           width: 400,
-          fontSize: 14,
-          lineHeight: 1.5,
+          fontSize: 20,
+          lineHeight: 2.2,
           fontFamily: "Helvetica",
-          margin: 10,
+          margin: 15,
+        }
+      );
+      const textB = new PDFTextElement(
+        "Hello, this is a long paragraph of text to render. Loremafkdbkfbdskjfkjdsbkjfbdskf lsndfjdskjfkdj",
+        {
+          width: 400,
+          fontSize: 20,
+          lineHeight: 2.2,
+          fontFamily: "Helvetica",
+          margin: 15,
+        }
+      );
+      const textC = new PDFTextElement(
+        "Hello, this is a long paragraph of text to render. Loremafkdbkfbdskjfkjdsbkjfbdskf lsndfjdskjfkdj",
+        {
+          width: 400,
+          fontSize: 20,
+          lineHeight: 2.2,
+          fontFamily: "Helvetica",
+          margin: 15,
+        }
+      );
+      const textD = new PDFTextElement(
+        "Hello, this is a long paragraph of text to render. Loremafkdbkfbdskjfkjdsbkjfbdskf lsndfjdskjfkdj",
+        {
+          width: 400,
+          fontSize: 20,
+          lineHeight: 2.2,
+          fontFamily: "Helvetica",
+          margin: 15,
+        }
+      );
+      const textE = new PDFTextElement(
+        "Hello, this is a long paragraph of text to render. Loremafkdbkfbdskjfkjdsbkjfbdskf lsndfjdskjfkdj",
+        {
+          width: 400,
+          fontSize: 20,
+          lineHeight: 2.2,
+          fontFamily: "Helvetica",
+          margin: 15,
+        }
+      );
+      const textF = new PDFTextElement(
+        "Hello, this is a long paragraph of text to render. Loremafkdbkfbdskjfkjdsbkjfbdskf lsndfjdskjfkdj",
+        {
+          width: 400,
+          fontSize: 20,
+          lineHeight: 2.2,
+          fontFamily: "Helvetica",
+          margin: 15,
+        }
+      );
+      const textG = new PDFTextElement(
+        "Hello, this is a long paragraph of text to render. Loremafkdbkfbdskjfkjdsbkjfbdskf lsndfjdskjfkdj",
+        {
+          width: 400,
+          fontSize: 20,
+          lineHeight: 2.2,
+          fontFamily: "Helvetica",
+          margin: 15,
+        }
+      );
+      const textH = new PDFTextElement(
+        "Hello, this is a long paragraph of text to render. Loremafkdbkfbdskjfkjdsbkjfbdskf lsndfjdskjfkdj",
+        {
+          width: 400,
+          fontSize: 20,
+          lineHeight: 2.2,
+          fontFamily: "Helvetica",
+          margin: 15,
+        }
+      );
+      const textI = new PDFTextElement(
+        "Hello, this is a long paragraph of text to render. Loremafkdbkfbdskjfkjdsbkjfbdskf lsndfjdskjfkdj",
+        {
+          width: 400,
+          fontSize: 20,
+          lineHeight: 2.2,
+          fontFamily: "Helvetica",
+          margin: 15,
+        }
+      );
+      const textJ = new PDFTextElement(
+        "Hello, this is a long paragraph of text to render. Loremafkdbkfbdskjfkjdsbkjfbdskf lsndfjdskjfkdj",
+        {
+          width: 400,
+          fontSize: 20,
+          lineHeight: 2.2,
+          fontFamily: "Helvetica",
+          margin: 15,
+        }
+      );
+      const textK = new PDFTextElement(
+        "Hello, this is a long paragraph of text to render. Loremafkdbkfbdskjfkjdsbkjfbdskf lsndfjdskjfkdj",
+        {
+          width: 400,
+          fontSize: 20,
+          lineHeight: 2.2,
+          fontFamily: "Helvetica",
+          margin: 15,
+        }
+      );
+      const textL = new PDFTextElement(
+        "Hello, this is a long paragraph of text to render. Loremafkdbkfbdskjfkjdsbkjfbdskf lsndfjdskjfkdj",
+        {
+          width: 400,
+          fontSize: 20,
+          lineHeight: 2.2,
+          fontFamily: "Helvetica",
+          margin: 15,
+        }
+      );
+      const textM = new PDFTextElement(
+        "Hello, this is a long paragraph of text to render. Loremafkdbkfbdskjfkjdsbkjfbdskf lsndfjdskjfkdj",
+        {
+          width: 400,
+          fontSize: 20,
+          lineHeight: 2.2,
+          fontFamily: "Helvetica",
+          margin: 15,
+        }
+      );
+      const textN = new PDFTextElement(
+        "Hello, this is a long paragraph of text to render. Loremafkdbkfbdskjfkjdsbkjfbdskf lsndfjdskjfkdj",
+        {
+          width: 400,
+          fontSize: 20,
+          lineHeight: 2.2,
+          fontFamily: "Helvetica",
+          margin: 15,
         }
       );
 
@@ -64,6 +194,19 @@ export default defineNuxtComponent({
 
       doc.addElement(text);
       doc.addElement(textA);
+      doc.addElement(textB);
+      doc.addElement(textC);
+      doc.addElement(textD);
+      doc.addElement(textE);
+      doc.addElement(textF);
+      doc.addElement(textG);
+      doc.addElement(textH);
+      doc.addElement(textI);
+      doc.addElement(textJ);
+      doc.addElement(textK);
+      doc.addElement(textL);
+      doc.addElement(textM);
+      doc.addElement(textN);
       
       const enginer = await PDFLibEngine.create();
       const renderer = new PDFLibRenderer(doc, enginer);

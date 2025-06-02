@@ -26,7 +26,6 @@ export class PDFPage implements PDFPageInterface {
 
   addElement(element: PDFElementInterface): void {
     this.elements.push(element);
-    this.cursor.advanceBySize(element.getSize());
   }
 
   removeElement(element: PDFElementInterface): void {
@@ -40,7 +39,6 @@ export class PDFPage implements PDFPageInterface {
     if(cursor.flexDirection === "vertical") {
       // Check if element height fits inside page height minus current cursor y and bottom margin
       const bottomMargin = (typeof this.margins === 'object' && this.margins.bottom) || 0;
-      const {bottomMargin: bm, cursorY, elSize, height} = {bottomMargin, cursorY: cursor.y, elSize: element.getSize().height, height: this.height};
       return cursor.y + element.getSize().height <= this.height - bottomMargin;
     } else {
       // For horizontal flow, check width fits

@@ -33,7 +33,7 @@ export abstract class PDFElement implements PDFElementInterface {
     const margin = this.resolveSpacing(this.style?.margin);
 
     return (
-      (this.style?.width ?? this.contentHeight()) +
+      (this.style?.width ?? this.contentWidth()) +
       padding.left + padding.right +
       margin.left + margin.right
     );
@@ -44,7 +44,7 @@ export abstract class PDFElement implements PDFElementInterface {
     const margin = this.resolveSpacing(this.style?.margin);
 
     return (
-      (this.style?.height ?? this.contentWidth()) +
+      (this.style?.height ?? this.contentHeight()) +
       padding.top + padding.bottom +
       margin.top + margin.bottom
     );
