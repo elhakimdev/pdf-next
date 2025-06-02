@@ -41,9 +41,6 @@ export class PDFPage implements PDFPageInterface {
       // Check if element height fits inside page height minus current cursor y and bottom margin
       const bottomMargin = (typeof this.margins === 'object' && this.margins.bottom) || 0;
       const {bottomMargin: bm, cursorY, elSize, height} = {bottomMargin, cursorY: cursor.y, elSize: element.getSize().height, height: this.height};
-
-      console.log({left: cursorY + elSize, r: height - bottomMargin})
-
       return cursor.y + element.getSize().height <= this.height - bottomMargin;
     } else {
       // For horizontal flow, check width fits

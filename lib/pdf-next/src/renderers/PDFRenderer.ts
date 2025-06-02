@@ -14,7 +14,6 @@ export abstract class PDFRenderer {
     for (const page of this.document.getPages()) {
       await this.renderPageStart(page);
       for (const element of page.elements ?? []) {
-        console.log({element});
         await this.renderElement(element);
       }
       await this.renderPageEnd(page);

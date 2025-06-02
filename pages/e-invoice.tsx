@@ -55,8 +55,7 @@ export default defineNuxtComponent({
 
       doc.addElement(text);
       doc.addElement(textA);
-
-      console.log(doc.getPages());
+      
       const enginer = await PDFLibEngine.create();
       const renderer = new PDFLibRenderer(doc, enginer);
       await renderer.render();
