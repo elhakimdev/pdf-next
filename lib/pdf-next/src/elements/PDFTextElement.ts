@@ -1,11 +1,16 @@
 import type { StyleOptions } from "../types/elements/PDFElement";
 import { PDFElement } from "./PDFElement";
-
+export interface TextStyleOptions extends StyleOptions {
+  maxWidth?: number;
+  align?: 'left' | 'center' | 'right' | 'justify';
+  direction?: 'row' | 'column';
+  gap?: number;
+}
 export class PDFTextElement extends PDFElement {
   type = "text";
   text: string;
 
-  constructor(text: string, style?: StyleOptions, id?: string) {
+  constructor(text: string, style?: TextStyleOptions, id?: string) {
     super(style, id);
     this.text = text;
   }

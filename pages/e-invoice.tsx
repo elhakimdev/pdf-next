@@ -192,21 +192,34 @@ export default defineNuxtComponent({
         console.log("Instace - afterAddElement", {...ev});
       })
 
-      doc.addElement(text);
-      doc.addElement(textA);
-      doc.addElement(textB);
-      doc.addElement(textC);
-      doc.addElement(textD);
-      doc.addElement(textE);
-      doc.addElement(textF);
-      doc.addElement(textG);
-      doc.addElement(textH);
-      doc.addElement(textI);
-      doc.addElement(textJ);
-      doc.addElement(textK);
-      doc.addElement(textL);
-      doc.addElement(textM);
-      doc.addElement(textN);
+      // doc.addElement(text);
+      // doc.addElement(textA);
+      // doc.addElement(textB);
+      // doc.addElement(textC);
+      // doc.addElement(textD);
+      // doc.addElement(textE);
+      // doc.addElement(textF);
+      // doc.addElement(textG);
+      // doc.addElement(textH);
+      // doc.addElement(textI);
+      // doc.addElement(textJ);
+      // doc.addElement(textK);
+      // doc.addElement(textL);
+      // doc.addElement(textM);
+      // doc.addElement(textN);
+
+      doc.addElement(
+        new PDFTextElement(
+          "Ini adalah contoh teks yang cukup panjang untuk dibungkus dan di-justify pada halaman PDF. PDFLibRenderer akan memecah kalimat ini menjadi beberapa baris yang rapi dan rata kanan-kiri Ini adalah contoh teks yang cukup panjang untuk dibungkus dan di-justify pada halaman PDF. PDFLibRenderer akan memecah kalimat ini menjadi beberapa baris yang rapi dan rata kanan-kiri. Ini adalah contoh teks yang cukup panjang untuk dibungkus dan di-justify pada halaman PDF. PDFLibRenderer akan memecah kalimat ini menjadi beberapa baris yang rapi dan rata kanan-kiri. Ini adalah contoh teks yang cukup panjang untuk dibungkus dan di-justify pada halaman PDF. PDFLibRenderer akan memecah kalimat ini menjadi beberapa baris yang rapi dan rata kanan-kiri.", {
+            fontSize: 14,
+            color: "#333333",
+            textAlign: "justify",
+            fontFamily: undefined, // pakai default
+            lineHeight: 18,
+            margin: 0
+          }
+        )
+      )
       
       const enginer = await PDFLibEngine.create();
       const renderer = new PDFLibRenderer(doc, enginer);
